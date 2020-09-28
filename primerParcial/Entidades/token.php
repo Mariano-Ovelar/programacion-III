@@ -11,13 +11,8 @@ class cookie
         $jwt = null;
         try {
             $key = "pro3-parcial";
-            $payload = array(
-                "email" => $dato['email'],
-                "clave" => $dato['clave'],
-                "tipo" => $dato['tipo']
-            );
+            $payload = $dato;
             $jwt = JWT::encode($payload, $key);
-            return $jwt;
         } catch (\Throwable $th) {
             //throw $th;
         } finally {
@@ -26,10 +21,12 @@ class cookie
     }
     public static function decodificarToken($jwt)
     {
-        $decoded = null;
+        $key = "pro3-parcial";
+        $decoded = JWT::decode($jwt, $key, array('HS256'));
+
         try {
             $key = "pro3-parcial";
-            $decoded = JWT::decode($jwt, $key, array('HS256'));
+            // $decoded = JWT::decode($jwt, $key, array('HS256'));
         } catch (\Throwable $th) {
             //throw $th;
         } finally {
