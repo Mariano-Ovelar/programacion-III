@@ -1,0 +1,23 @@
+{
+    "name": "mariamo/skeleton",
+    "description": "",
+    "authors": [
+        {
+            "name": "Mariano",
+            "email": "marianoovelar200@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.2",
+        "illuminate/database": "^8.15",
+        "illuminate/events": "^8.15",
+        "firebase/php-jwt": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Config\\": "config/",
+            "App\\": "src/"
+        }
+    }
+}
